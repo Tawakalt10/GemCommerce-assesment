@@ -1,0 +1,437 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root{
+  --bg: #ffffff;
+  --text: #0f172a;
+  --muted: #475569;
+
+  --line: rgba(15, 23, 42, .08);
+  --shadow: 0 12px 30px rgba(2, 6, 23, .08);
+
+  --brand: #ee7b5f;
+
+  --wrap: 1120px;
+  --pad: clamp(16px, 3vw, 28px);
+
+  --title: clamp(22px, 3vw, 34px);
+  --body: clamp(14px, 1.4vw, 16px);
+}
+
+*{ box-sizing: border-box; }
+body{
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Inter Tight", sans-serif;
+}
+
+.wrap{
+  width: min(var(--wrap), calc(100% - (var(--pad) * 2)));
+  margin: 0 auto;
+}
+
+.section{
+  padding: clamp(26px, 5vw, 70px) 0;
+}
+
+.title{
+  font-size: 40px;
+  line-height: 1.12;
+  letter-spacing: 0.25px;
+  margin: 0 0 14px;
+  font-weight: 600;
+  font-style: SemiBold;
+}
+.center{ text-align: center; }
+
+.text{
+  margin: 0 0 16px;
+  color: var(--muted);
+  font-size: var(--body);
+  line-height: 1.75;
+}
+
+/* Button */
+.btn{
+  border: 0;
+  background: var(--brand);
+  color: #fff;
+  font-weight: 800;
+  padding: 12px 16px;
+  border-radius: 14px;
+  cursor: pointer;
+  box-shadow: 0 10px 22px rgba(238, 123, 95, .25);
+}
+.btn.wide{ width: 100%; padding: 14px 16px; }
+
+/* Image behavior */
+.img{
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+
+
+/* SECTION 1 */
+.s1{
+  padding: clamp(40px, 6vw, 84px) 0;
+  background: #fff;
+}
+
+.s1-title{
+  text-align: center;
+  font-size: clamp(24px, 3.2vw, 38px);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0 0 34px;
+  font-weight: 800;
+}
+
+/* 3 columns: features | circle | features */
+.s1-grid{
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: clamp(18px, 3vw, 42px);
+  align-items: center;
+}
+
+.s1-col{
+  display: grid;
+  gap: 42px;
+}
+
+/* each feature row */
+.s1-item{
+  display: grid;
+  grid-template-columns: 54px 1fr;
+  gap: 14px;
+  align-items: start;
+}
+
+/* icon badge backgrounds (soft) */
+.s1-badge{
+  width: 54px;
+  height: 54px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+}
+.bg-green{ background: #dff6e5; }
+.bg-yellow{ background: #f8efcf; }
+.bg-mint{ background: #d9f3f0; }
+.bg-peach{ background: #f7d9d1; }
+
+.s1-ico{
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+  display: block;
+}
+
+.s1-copy h3{
+  margin: 2px 0 6px;
+  font-size: 15px;
+  font-weight: 800;
+}
+.s1-copy p{
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #6b7280;
+  max-width: 32ch;
+}
+
+/* center split circle with 2 images */
+.s1-center{
+  display: grid;
+  place-items: center;
+}
+
+.split-circle{
+  position: relative;
+  width: 320px;
+  height: 320px;
+  border-radius: 999px;
+  overflow: hidden;
+  background: #f3f4f6;
+  box-shadow: 0 0 0 6px rgba(15, 23, 42, 0.04); /* subtle ring */
+}
+
+/* left/right halves */
+.half{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  overflow: hidden;
+}
+.half.left{ left: 0; }
+.half.right{ right: 0; }
+
+.circle-img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* tiny center dot */
+.center-dot{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 14px;
+  height: 14px;
+  transform: translate(-50%, -50%);
+  border-radius: 999px;
+  background: #fff;
+  box-shadow: 0 0 0 4px rgba(239, 119, 86, 0.25);
+}
+
+/* Section 1 CTA */
+.s1-cta{
+  margin-top: 34px;
+  display: grid;
+  justify-items: center;
+  gap: 14px;
+}
+
+.btn-cta{
+  width: min(420px, 92%);
+  border: 0;
+  border-radius: 6px;
+  padding: 14px 18px;
+  font-weight: 800;
+  background: var(--brand);
+  color: #fff;
+  cursor: pointer;
+}
+
+.s1-trust{
+  width: min(560px, 96%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  color: rgba(107, 114, 128, 0.95);
+  font-size: 12px;
+}
+
+.trust-left{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.trust-dot{
+  width: 14px;
+  height: 14px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.08);
+  display: inline-block;
+}
+
+.trust-icons{
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.trust-ico{
+  width: 34px;
+  height: 20px;
+  object-fit: contain;
+  display: block;
+  opacity: 0.85;
+}
+
+/* Responsive for Section 1 */
+@media (max-width: 980px){
+  .s1-grid{
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+
+  .split-circle{
+    width: min(320px, 85vw);
+    height: min(320px, 85vw);
+  }
+
+  .s1-col{ gap: 22px; }
+  .s1-copy p{ max-width: 60ch; }
+}
+
+/* =========================
+   SECTION 2 (PERFECT ALIGN)
+   ========================= */
+.s2{
+  background: #fff;
+}
+
+.s2-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;   /* same width */
+  gap: clamp(18px, 4vw, 44px);
+  align-items: stretch;             /* same height */
+}
+
+/* SAME background + same radius on both sides */
+.s2-card{
+  background: #f3f4f6;              /* apply to BOTH sides */
+  /* border: 1px solid rgba(15, 23, 42, .08); */
+  border-radius: 22px;
+  padding: clamp(18px, 2.4vw, 26px);
+  box-shadow: 0 12px 30px rgba(2, 6, 23, .08);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;          /* aligns content vertically like screenshot */
+}
+
+/* Left text sizing / spacing */
+.s2-title{
+  margin: 0 0 10px;
+  font-size: clamp(22px, 2.4vw, 34px);
+  line-height: 1.12;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  max-width: 30ch;                  /* forces the same wrapping as screenshot */
+}
+
+.s2-lead{
+  margin: 0 0 16px;
+  color: rgba(71, 85, 105, .95);
+  font-size: 14px;
+  line-height: 1.65;
+  max-width: 62ch;
+}
+
+/* Key points box inside left card */
+.s2-box{
+  background: #f3f4f6;              /* same as card for seamless look */
+  border: 0;
+  margin: 8px 0 16px;
+}
+
+.s2-box-title{
+  font-weight: 900;
+  font-size: 13px;
+  color: rgba(15, 23, 42, .85);
+  margin-bottom: 10px;
+}
+
+.s2-kp{
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 14px;
+  padding: 12px 0;
+  /* border-top: 1px solid rgba(15, 23, 42, .10); */
+}
+
+.s2-kp:first-of-type{
+  border-top: 0;
+  padding-top: 0;
+}
+
+.s2-num{
+  font-weight: 1000;
+  font-size: 24px;
+  line-height: 1;
+  color: #fb7185;                   /* close to screenshot */
+}
+
+.s2-kptext{
+  margin: 0;
+  color: rgba(71, 85, 105, .95);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* CTA button (same as screenshot shape) */
+.s2-btn{
+  margin-top: 6px;
+  border: 0;
+  background: #ef7756;
+  color: #fff;
+  font-weight: 900;
+  padding: 14px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* Right media card */
+.s2-media{
+  padding: 0;                       /* image should fill the card */
+}
+
+/* Image wrapper */
+.s2-img{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 420px;                /* ensures it matches left height visually */
+  border-radius: 22px;
+  overflow: hidden;
+  background: #f3f4f6;
+}
+
+/* IMPORTANT: no crop */
+.s2-img-el{
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;              /* shows whole image */
+  object-position: center;
+}
+
+/* Responsive */
+@media (max-width: 980px){
+  .s2-grid{
+    grid-template-columns: 1fr;
+  }
+  .s2-img{
+    min-height: 320px;
+  }
+}
+
+
+/* SECTION 3 */
+.split{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(18px, 4vw, 44px);
+  align-items: center;
+  margin-top: clamp(16px, 3vw, 30px);
+}
+.split.reverse .imgbox{ order: 2; }
+.split.reverse > div:last-child{ order: 1; }
+
+.imgbox{
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  border-radius: 22px;
+  overflow: hidden;
+  background: rgba(15, 23, 42, .04);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+
+/* RESPONSIVE SECTION */
+@media (max-width: 980px){
+  .equal2{ grid-template-columns: 1fr; }
+  .imgfill{ min-height: 320px; }
+
+  .split{ grid-template-columns: 1fr; }
+  .split.reverse .imgbox{ order: initial; }
+  .split.reverse > div:last-child{ order: initial; }
+}
+
+@media (max-width: 520px){
+  .kp{ grid-template-columns: 62px 1fr; }
+}
