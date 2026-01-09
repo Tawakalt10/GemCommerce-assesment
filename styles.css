@@ -144,7 +144,7 @@ body{
   max-width: 32ch;
 }
 
-/* center split circle with 2 images */
+
 .s1-center{
   display: grid;
   place-items: center;
@@ -172,13 +172,25 @@ body{
 .half.right{ right: 0; }
 
 .circle-img{
+   position: absolute;     
+  inset: 0;               
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
 
-/* tiny center dot */
+
+.half.left .circle-img{
+  object-position: left center;
+}
+
+.half.right .circle-img{
+  object-position: right center;
+}
+
+
+
 .center-dot{
   position: absolute;
   left: 50%;
@@ -265,41 +277,38 @@ body{
   .s1-copy p{ max-width: 60ch; }
 }
 
-/* =========================
-   SECTION 2 (PERFECT ALIGN)
-   ========================= */
+
+   /* SECTION 2  */
+  
 .s2{
   background: #fff;
 }
 
 .s2-grid{
   display: grid;
-  grid-template-columns: 1fr 1fr;   /* same width */
+  grid-template-columns: 1fr 1fr;   
   gap: clamp(18px, 4vw, 44px);
-  align-items: stretch;             /* same height */
+  align-items: stretch;             /
 }
 
-/* SAME background + same radius on both sides */
 .s2-card{
-  background: #f3f4f6;              /* apply to BOTH sides */
-  /* border: 1px solid rgba(15, 23, 42, .08); */
+  background: #f3f4f6;             
   border-radius: 22px;
   padding: clamp(18px, 2.4vw, 26px);
   box-shadow: 0 12px 30px rgba(2, 6, 23, .08);
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;          /* aligns content vertically like screenshot */
+  justify-content: center;         
 }
 
-/* Left text sizing / spacing */
 .s2-title{
   margin: 0 0 10px;
   font-size: clamp(22px, 2.4vw, 34px);
   line-height: 1.12;
   font-weight: 900;
   letter-spacing: -0.02em;
-  max-width: 30ch;                  /* forces the same wrapping as screenshot */
+  max-width: 30ch;                  
 }
 
 .s2-lead{
@@ -310,9 +319,9 @@ body{
   max-width: 62ch;
 }
 
-/* Key points box inside left card */
+
 .s2-box{
-  background: #f3f4f6;              /* same as card for seamless look */
+  background: #f3f4f6;             
   border: 0;
   margin: 8px 0 16px;
 }
@@ -341,7 +350,7 @@ body{
   font-weight: 1000;
   font-size: 24px;
   line-height: 1;
-  color: #fb7185;                   /* close to screenshot */
+  color: #fb7185;                 
 }
 
 .s2-kptext{
@@ -351,7 +360,7 @@ body{
   line-height: 1.6;
 }
 
-/* CTA button (same as screenshot shape) */
+
 .s2-btn{
   margin-top: 6px;
   border: 0;
@@ -366,7 +375,7 @@ body{
 
 /* Right media card */
 .s2-media{
-  padding: 0;                       /* image should fill the card */
+  padding: 0;                       
 }
 
 /* Image wrapper */
@@ -374,18 +383,18 @@ body{
   position: relative;
   width: 100%;
   height: 100%;
-  min-height: 420px;                /* ensures it matches left height visually */
+  min-height: 420px;               
   border-radius: 22px;
   overflow: hidden;
   background: #f3f4f6;
 }
 
-/* IMPORTANT: no crop */
+
 .s2-img-el{
   width: 100%;
   height: 100%;
   display: block;
-  object-fit: contain;              /* shows whole image */
+  object-fit: contain;              
   object-position: center;
 }
 
